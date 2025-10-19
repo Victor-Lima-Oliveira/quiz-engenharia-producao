@@ -1,0 +1,16 @@
+meta {
+  name: buscadados
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://docs.google.com/spreadsheets/d/1xSKmeapxAYN5HxKdvLABqlmXcZUMAXQNyhDc-JOiieE/export?format=csv&id=ID_DA_PLANILHA
+  body: none
+  auth: inherit
+}
+
+params:query {
+  format: csv
+  id: ID_DA_PLANILHA
+}
