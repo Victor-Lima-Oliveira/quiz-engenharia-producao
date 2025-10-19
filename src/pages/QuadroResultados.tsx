@@ -1,4 +1,4 @@
-import { Trophy, RotateCcw, Share2, Star } from "lucide-react";
+import { Trophy, RotateCcw, Star } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function TelaResultados() {
@@ -82,46 +82,3 @@ function TelaResultados() {
 }
 
 export default TelaResultados;
-
-// ==========================================
-// EXEMPLO DE USO:
-// ==========================================
-
-/*
-import QuizResult from '@/components/QuizResult';
-
-function QuizResultPage() {
-  const acertos = 2;
-  const totalPerguntas = 5;
-
-  const handleRefazer = () => {
-    // Lógica para refazer o quiz
-    console.log('Refazendo quiz...');
-  };
-
-  const handleCompartilhar = () => {
-    // Lógica de compartilhamento
-    if (navigator.share) {
-      navigator.share({
-        title: 'Meu Resultado no Quiz',
-        text: `Acertei ${acertos} de ${totalPerguntas} perguntas no Quiz de Engenharia de Produção!`,
-      });
-    }
-  };
-
-  const handleVoltarInicio = () => {
-    // Navegar para o início
-    console.log('Voltando ao início...');
-  };
-
-  return (
-    <QuizResult
-      acertos={acertos}
-      totalPerguntas={totalPerguntas}
-      onRefazer={handleRefazer}
-      onCompartilhar={handleCompartilhar}
-      onVoltarInicio={handleVoltarInicio}
-    />
-  );
-}
-*/
