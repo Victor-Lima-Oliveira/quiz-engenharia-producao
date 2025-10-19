@@ -99,7 +99,7 @@ function TelaPerguntas() {
           <h6>
             Pergunta {indexAtual + 1} de {perguntas.length}
           </h6>
-          <h6>{((indexAtual + 1) / perguntas.length) * 100}%</h6>
+          <h6>{Math.floor(((indexAtual + 1) / perguntas.length) * 100)}%</h6>
         </div>
         <Progress value={progresso} className="mb-6" />
         <h2 className="text-xl font-bold text-center">
@@ -115,7 +115,9 @@ function TelaPerguntas() {
             {opcoes.map((opcao) => (
               <Button
                 key={opcao}
-                className="flex-1 py-3 px-4 whitespace-normal break-words"
+                className={`flex-1 py-3 px-4 whitespace-normal break-words ${
+                  respostaSelecionada !== opcao ? "bg-white" : ""
+                }  `}
                 onClick={() => setRespostaSelecionada(opcao)}
                 variant={
                   respostaSelecionada === opcao ? "secondary" : "outline"

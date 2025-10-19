@@ -8,6 +8,11 @@ function TelaResultados() {
     pontuacao: 0,
   };
 
+  if(pontuacao === 0) 
+  {
+    navigate("/");
+  }
+
   return (
     <div className="min-h-screen bg-secondary flex items-center justify-center p-4">
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl">
