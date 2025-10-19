@@ -33,6 +33,7 @@ function TelaPerguntas() {
     null
   );
   const [opcoes, setOpcoes] = useState<string[]>([]);
+  let pontuacaoAtual = 0;
 
   // embaralha as opções apenas quando a pergunta muda
   useEffect(() => {
@@ -63,9 +64,11 @@ function TelaPerguntas() {
     const acertou = respostaSelecionada === perguntaAtual.correta;
 
     if (acertou) {
+      pontuacaoAtual = pontuacao + pontosNum;
       setPontuacao((prev) => prev + pontosNum);
       toast.success("Resposta correta! 🎉");
     } else {
+      pontuacaoAtual = pontuacao;
       toast.error(
         `Resposta incorreta! A correta era: ${perguntaAtual.correta}`
       );
@@ -80,7 +83,7 @@ function TelaPerguntas() {
       } else {
         navigate("/Final", {
           state: {
-            pontuacao: pontuacao + pontosNum,
+            pontuacao: pontuacaoAtual,
             totalPerguntas: perguntas.length,
           },
         });
