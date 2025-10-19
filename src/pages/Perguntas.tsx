@@ -102,7 +102,7 @@ function TelaPerguntas() {
         <h2 className="text-xl font-bold text-center">
           Pontuação: {pontuacao}
         </h2>
-        <Card className="shadow-lg">
+        <Card className="shadow-lg relative z-10">
           <CardHeader>
             <h1 className="text-2xl md:text-3xl font-bold text-center text-primary">
               {perguntaAtual.pergunta}
@@ -112,6 +112,7 @@ function TelaPerguntas() {
             {opcoes.map((opcao) => (
               <Button
                 key={opcao}
+                className="flex-1 py-3 px-4 whitespace-normal break-words"
                 onClick={() => setRespostaSelecionada(opcao)}
                 variant={
                   respostaSelecionada === opcao ? "secondary" : "outline"
@@ -133,10 +134,13 @@ function TelaPerguntas() {
           </Button>
         </div>
       </div>
-      <img
-        src={footerImage}
-        className="fixed bottom-0 left-0 w-full h-1/2 z-0"
-      />
+      <div className="fixed bottom-0 left-0 w-full h-1/2 overflow-hidden z-0">
+        <img
+          src={footerImage}
+          className="w-full h-full object-cover"
+          alt="Footer"
+        />
+      </div>
     </>
   );
 }
