@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heart, Sparkles, X } from "lucide-react";
+import { Heart, X } from "lucide-react";
 import confetti from "canvas-confetti";
 
 function TelaPedido() {
