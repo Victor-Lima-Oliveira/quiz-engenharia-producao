@@ -81,7 +81,7 @@ function TelaPerguntas() {
         setIndexAtual(proxima);
         setRespostaSelecionada(null);
       } else {
-        navigate("/Final", {
+        navigate("/Pedido", {
           state: {
             pontuacao: pontuacaoAtual,
             totalPerguntas: perguntas.length,
